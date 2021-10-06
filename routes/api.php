@@ -14,11 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OrderController;
 
 
 Route::middleware(['guest'])->group(function () {
-    Route::post('/register', [AuthController::class, 'store']);
+    Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:5,5');
 });
 Route::middleware(['auth:sanctum'])->group(function () {
+    Route::post('/order', [OrderController::class, 'order']);
 });
