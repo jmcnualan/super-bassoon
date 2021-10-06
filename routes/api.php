@@ -18,7 +18,7 @@ use App\Http\Controllers\AuthController;
 
 Route::middleware(['guest'])->group(function () {
     Route::post('/register', [AuthController::class, 'store']);
-    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:5,5');
 });
 Route::middleware(['auth:sanctum'])->group(function () {
 });
