@@ -45,7 +45,7 @@ class OrderController extends Controller
     $order->quantity = $request->quantity;
     $order->save();
     
-    $message = 'You have successfully ordered this product';
+    $message = 'You have successfully ordered this product.';
     return response()->json(['message'=>$message], 201);
   }
 }

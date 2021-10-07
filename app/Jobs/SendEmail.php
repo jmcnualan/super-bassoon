@@ -37,8 +37,5 @@ class SendEmail implements ShouldQueue
     {
         $email = new EmailForQueuing();
         Mail::to($this->emails['email'])->send($email);
-
-        dd('Send Email Successfully', $email);
-
     }
 }
