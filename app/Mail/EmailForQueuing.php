@@ -28,7 +28,7 @@ class EmailForQueuing extends Mailable
      */
     public function build()
     {
-        return $this->from('mail@example.com', 'Mailtrap')
+        return $this->from('mail@example.com', 'BESE')
             ->subject('Test Queued Email')
             ->view('mails.registration');
         //return $this->view('mail.registered');
